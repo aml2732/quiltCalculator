@@ -1,0 +1,20 @@
+.QuiltButton{
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  position:relative;
+}
+
+.QuiltButton .QuiltButton-title {
+  font-weight: bold;
+  font-size: 1.025rem;
+}
+
+.QuiltButton img {
+  position:absolute;
+  bottom: 5px;
+  left: 25px;
+  right: 25px;
+}
