@@ -113,7 +113,8 @@ function App() {
           </div>
         </div>
         <div className="div-partner quilt-visualization">
-          <CanvasVisualization width="500" height="500" rows={rows} cols={cols}/>
+          <CanvasVisualization width="400" height="500" rows={rows} cols={cols}/>
+          <p><strong>Note: </strong>Canvas Visualization is not an exact rendering and should not be relied upon to make critical quilt decisions.<br/> Additionally there is a bug resulting in erronious renders when square size is re-entered. </p>
         </div>
       </div>
     </div>
