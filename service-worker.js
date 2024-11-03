@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/quiltCalculator/precache-manifest.587691e1a773321c987499241f4c0727.js"
+  "/quiltCalculator/precache-manifest.b5586ac1640b7ef8c85637e4a670209f.js"
 );
 
 self.addEventListener('message', (event) => {

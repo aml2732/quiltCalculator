@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ad4d04a5d67c3cbbf0ed440f711d2b59",
+    "revision": "3dc82060a0135d0518577020ebca208e",
     "url": "/quiltCalculator/index.html"
   },
   {
-    "revision": "e2d7a98760aaa874e1e5",
+    "revision": "c11bfebab5f85d942362",
     "url": "/quiltCalculator/static/css/main.1ce079d0.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/quiltCalculator/static/js/2.e992bd1e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e2d7a98760aaa874e1e5",
-    "url": "/quiltCalculator/static/js/main.d3f9cd21.chunk.js"
+    "revision": "c11bfebab5f85d942362",
+    "url": "/quiltCalculator/static/js/main.8cbdcae6.chunk.js"
   },
   {
     "revision": "f3df636a4e2c17d31c71",

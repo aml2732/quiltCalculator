@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/quiltCalculator/static/css/main.1ce079d0.chunk.css",
-    "main.js": "/quiltCalculator/static/js/main.d3f9cd21.chunk.js",
-    "main.js.map": "/quiltCalculator/static/js/main.d3f9cd21.chunk.js.map",
+    "main.js": "/quiltCalculator/static/js/main.8cbdcae6.chunk.js",
+    "main.js.map": "/quiltCalculator/static/js/main.8cbdcae6.chunk.js.map",
     "runtime-main.js": "/quiltCalculator/static/js/runtime-main.14753901.js",
     "runtime-main.js.map": "/quiltCalculator/static/js/runtime-main.14753901.js.map",
     "static/js/2.e992bd1e.chunk.js": "/quiltCalculator/static/js/2.e992bd1e.chunk.js",
     "static/js/2.e992bd1e.chunk.js.map": "/quiltCalculator/static/js/2.e992bd1e.chunk.js.map",
     "index.html": "/quiltCalculator/index.html",
-    "precache-manifest.587691e1a773321c987499241f4c0727.js": "/quiltCalculator/precache-manifest.587691e1a773321c987499241f4c0727.js",
+    "precache-manifest.b5586ac1640b7ef8c85637e4a670209f.js": "/quiltCalculator/precache-manifest.b5586ac1640b7ef8c85637e4a670209f.js",
     "service-worker.js": "/quiltCalculator/service-worker.js",
     "static/css/main.1ce079d0.chunk.css.map": "/quiltCalculator/static/css/main.1ce079d0.chunk.css.map",
     "static/js/2.e992bd1e.chunk.js.LICENSE.txt": "/quiltCalculator/static/js/2.e992bd1e.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.14753901.js",
     "static/js/2.e992bd1e.chunk.js",
     "static/css/main.1ce079d0.chunk.css",
-    "static/js/main.d3f9cd21.chunk.js"
+    "static/js/main.8cbdcae6.chunk.js"
   ]
 }
