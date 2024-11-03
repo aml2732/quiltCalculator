@@ -2,9 +2,9 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import './App.css';
 import QuiltButton from './QuiltButton'
+import CanvasVisualization from "./CanvasVisualization"
 import seam_allow_graphics from './images/seam-allow-emoji.png'
 import {QUILT_DIMENSIONS, SEAM_ALLOWANCE_NUMBER_MAP} from './constants.js'
-
 
 function App() {
   const [step, setStep] = useState(0)
@@ -41,8 +41,13 @@ function App() {
         setCols(calculateAnyMath(width))
       }
 
+      const clearCanvas = () => { }
+
+      const drawGridOnCanvas = () => {}
       calculateRows()
       calculateColumns()
+      clearCanvas()
+      drawGridOnCanvas()
     }
   }, [size, seam, square])
 
@@ -62,47 +67,57 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="page-title">Quilt Calculator</h1>
-      <h2>Step 1: Select Quilt Size {!step && <span className="youarehere">&#8656; You are here</span>}</h2>
-      {!step && <div className="section section-0">
-        <div className="bed-selection">
-          <QuiltButton title="Twin" onSelect={onSelectSize}/>
-          <QuiltButton title="Twin XL" onSelect={onSelectSize}/>
-          <QuiltButton title="Full" onSelect={onSelectSize}/>
-          <QuiltButton title="Queen" onSelect={onSelectSize}/>
-          <QuiltButton title="King" onSelect={onSelectSize}/>
-          <QuiltButton title="California King" onSelect={onSelectSize}/>
-        </div>
-      </div>}
-      <h2>Step 2: Select Seam Allowance {step === 1 && <span className="youarehere">&#8656; You are here</span>}</h2>
-      {step === 1 && <div className="section section-1">
-        <div className="seam-selection">
-          <QuiltButton title="1/4inch" graphic={seam_allow_graphics} onSelect={onSelectSeam}/>
-          <QuiltButton title="3/8inch" graphic={seam_allow_graphics} onSelect={onSelectSeam}/>
-          <QuiltButton title="1/2inch" graphic={seam_allow_graphics} onSelect={onSelectSeam}/>
-          <QuiltButton title="5/8inch" graphic={seam_allow_graphics} onSelect={onSelectSeam}/>
-          <QuiltButton title="3/4inch" graphic={seam_allow_graphics} onSelect={onSelectSeam}/>
-        </div>
-      </div>}
-      <h2>Step 3: Square size {step === 2 && <span className="youarehere">&#8656; You are here</span>}</h2>
-      {step === 2 && <div className="section section-1">
-        <div>
-          <input type="number" value={square} onChange={(e)=> {onChangeSquare(e.target.value)}} min={1} max={12}/>
-          <button onClick={moveToNextStep}> Confirm </button>
-        </div>
-      </div>}
-      <h2>Results: {step === 3 && <span className="youarehere">&#8656; You are here</span>}</h2>
-      <div className="results">
-        <div className="single-result"><b>Size:</b> {size}</div>
-        <div className="single-result"><b>Seam Allowance:</b> {seam}</div>
-        <div className="single-result"><b>Square Size:</b> {square}</div>
-        <div className="single-result"><b>Dimensions (inches):</b> {QUILT_DIMENSIONS[size].width_inches} x {QUILT_DIMENSIONS[size].height_inches}</div>
-        <div className="single-result"><b>Rows needed:</b> {rows}</div>
-        <div className="single-result"><b>Columns needed:</b> {cols}</div>
-        <div className="single-result"><b>Squares needed:</b> {total}</div>
+      <div className="row-container header-background">
+        <h1 className="page-title">Quilt Calculator</h1>
       </div>
-
+      <div className="row-container">
+        <div className="div-partner entry-form">
+          <p>Use the Quilt Calculator to see how many fabric squares, rows, and columns needed to create quilts of certain sizes.</p>
+          <h2>Step 1: Select Quilt Size {!step && <span className="youarehere">&#8656; You are here</span>}</h2>
+          {!step && <div className="section section-0">
+            <div className="bed-selection">
+              <QuiltButton title="Twin" onSelect={onSelectSize}/>
+              <QuiltButton title="Twin XL" onSelect={onSelectSize}/>
+              <QuiltButton title="Full" onSelect={onSelectSize}/>
+              <QuiltButton title="Queen" onSelect={onSelectSize}/>
+              <QuiltButton title="King" onSelect={onSelectSize}/>
+              <QuiltButton title="California King" onSelect={onSelectSize}/>
+            </div>
+          </div>}
+          <h2>Step 2: Select Seam Allowance {step === 1 && <span className="youarehere">&#8656; You are here</span>}</h2>
+          {step === 1 && <div className="section section-1">
+            <div className="seam-selection">
+              <QuiltButton title="1/4inch" graphic={seam_allow_graphics} onSelect={onSelectSeam}/>
+              <QuiltButton title="3/8inch" graphic={seam_allow_graphics} onSelect={onSelectSeam}/>
+              <QuiltButton title="1/2inch" graphic={seam_allow_graphics} onSelect={onSelectSeam}/>
+              <QuiltButton title="5/8inch" graphic={seam_allow_graphics} onSelect={onSelectSeam}/>
+              <QuiltButton title="3/4inch" graphic={seam_allow_graphics} onSelect={onSelectSeam}/>
+            </div>
+          </div>}
+          <h2>Step 3: Square size (inches) {step === 2 && <span className="youarehere">&#8656; You are here</span>}</h2>
+          {step === 2 && <div className="section section-1">
+            <div>
+              <input type="number" value={square} onChange={(e)=> {onChangeSquare(e.target.value)}} min={1} max={12}/>
+              <button onClick={moveToNextStep}> Confirm </button>
+            </div>
+          </div>}
+          <h2>Results: {step === 3 && <span className="youarehere">&#8656; You are here</span>}</h2>
+          <div className="results">
+            <div className="single-result"><b>Size:</b> {size}</div>
+            <div className="single-result"><b>Seam Allowance:</b> {seam}</div>
+            <div className="single-result"><b>Square Size:</b> {square}</div>
+            <div className="single-result"><b>Dimensions (inches):</b> {QUILT_DIMENSIONS[size].width_inches} x {QUILT_DIMENSIONS[size].height_inches}</div>
+            <div className="single-result"><b>Rows needed:</b> {rows}</div>
+            <div className="single-result"><b>Columns needed:</b> {cols}</div>
+            <div className="single-result"><b>Squares needed:</b> {total}</div>
+          </div>
+        </div>
+        <div className="div-partner quilt-visualization">
+          <CanvasVisualization width="500" height="500" rows={rows} cols={cols}/>
+        </div>
+      </div>
     </div>
+
   );
 }
 
